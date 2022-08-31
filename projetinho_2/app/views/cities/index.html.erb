@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cities</h1>
+
+<%= Date.today%>
+<%= Date.today.strftime("%d/%m/%Y")%>
+<%= br_date(Date.today)%>
+<table>
+  <thead>
+    <tr>
+      <th>Descripton</th>
+      <th>Code</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city.descripton %></td>
+        <td><%= city.code %></td>
+        <td><%= city.image %></td>
+        <td><%= link_to t('links.show'), city %></td>
+        <td><%= link_to t('links.edit'), edit_city_path(city) %></td>
+        <td><%= link_to t('links.destroy'), city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New City', new_city_path %>
