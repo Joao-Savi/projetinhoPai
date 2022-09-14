@@ -2,3 +2,14 @@
 <p>Find me in app/views/welcome/index.html.erb</p>
 <p>O idioma padrão é:<%= I18n.locale%> - <%=t('hello')%></p>
 <p>Data padrão <%=I18n.l(Date.today)%></P>
+
+<h2>cookies<%= cookies[:teste_C] %><h2>
+<h2>session<%= session[:teste_S] %><h2>
+
+<P><%= I18n.t('welcome')%>!</p>
+<p><%= t('city')%> </p>
+
+<% alert_msg = "Bom dia!"%>
+<script>
+    $.notify("<%= alert_msg %>", "sucesso")
+</script>
